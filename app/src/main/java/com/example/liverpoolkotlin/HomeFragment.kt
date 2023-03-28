@@ -25,8 +25,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.goToHistory.setOnClickListener {
+        binding.historyButton.setOnClickListener {
             val action = HomeFragmentDirections.homeFragmentToHistoryFragment()
+            findNavController().navigate(action)
+        }
+        binding.teamButton.setOnClickListener {
+            val action = HomeFragmentDirections.homeFragmentToTeamFragment()
             findNavController().navigate(action)
         }
     }

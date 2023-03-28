@@ -14,10 +14,17 @@
         <action
             android:id="@+id/homeFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/homeFragment_to_teamFragment"
+            app:destination="@id/teamFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.liverpoolkotlin.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.example.liverpoolkotlin.TeamFragment"
+        android:label="TeamFragment" />
 </navigation>
