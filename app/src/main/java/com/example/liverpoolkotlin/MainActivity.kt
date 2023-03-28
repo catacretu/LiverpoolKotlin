@@ -2,6 +2,7 @@ package com.example.liverpoolkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.liverpoolkotlin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

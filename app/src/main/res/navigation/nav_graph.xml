@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.liverpoolkotlin.HomeFragment"
+        android:name="com.example.liverpoolkotlin.views.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -20,11 +20,11 @@
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.liverpoolkotlin.HistoryFragment"
+        android:name="com.example.liverpoolkotlin.views.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/teamFragment"
-        android:name="com.example.liverpoolkotlin.TeamFragment"
+        android:name="com.example.liverpoolkotlin.views.TeamFragment"
         android:label="TeamFragment" />
 </navigation>
