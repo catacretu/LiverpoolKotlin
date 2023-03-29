@@ -1,11 +1,13 @@
 package com.example.liverpoolkotlin.di
 
-import android.app.Application
+import com.example.liverpoolkotlin.LiverpoolApp
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Component(
     modules = [
+        AndroidInjectionModule::class,
         AppModule::class,
         ActivitiesModule::class,
         FragmentModules::class
@@ -14,5 +16,5 @@ import javax.inject.Singleton
 
 @Singleton
 interface AppComponent {
-    fun inject(application: Application)
+    fun inject(application: LiverpoolApp)
 }
