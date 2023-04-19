@@ -22,6 +22,5 @@ class PlayerRepositoryImpl @Inject constructor(
             .observeOn(Schedulers.io())
             .doOnSuccess { playerDAO.savePlayers(it)}
             .onErrorResumeNext { playerDAO.getAllPlayers() }
-
     }
 }

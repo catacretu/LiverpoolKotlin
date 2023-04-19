@@ -1,27 +1,29 @@
 package com.example.liverpoolkotlin.viewmodel
 
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.liverpoolkotlin.data.local.model.PlayerEntity
 import com.example.liverpoolkotlin.data.repository.PlayerRepository
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PlayerViewModel @Inject constructor(private val repository: PlayerRepository) : ViewModel() {
 
-    private var playerData: MutableLiveData<List<PlayerEntity>> = MutableLiveData()
+    //Inspired from https://stackoverflow.com/questions/69477628/trying-to-get-viewmodel-in-composable
+    val playerData: MutableState<List<PlayerEntity>> = mutableStateOf(emptyList())
 
 
     init {
-        loadPlayerData()
+        viewModelScope.launch {
+            val data = fetchPlayerData()
+            playerData.value = data
+        }
     }
 
-    fun getPlayerObserver(): MutableLiveData<List<PlayerEntity>> {
-        return playerData
-    }
-
-    private fun loadPlayerData() {
-        val list = repository.getPlayers().blockingGet()
-        playerData.postValue(list)
+    suspend fun fetchPlayerData(): List<PlayerEntity> {
+        return repository.getPlayers().blockingGet()
     }
 
 }
