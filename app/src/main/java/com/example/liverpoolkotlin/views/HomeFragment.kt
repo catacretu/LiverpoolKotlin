@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
 
         return ComposeView(requireContext()).apply {
             setContent {
-                loadUI()
+                LoadUI()
             }
         }
     }
@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
 
     @OptIn(ExperimentalMaterialApi::class)
     @Composable
-    fun loadUI() {
+    fun LoadUI() {
         ConstraintLayout(
             modifier = Modifier
                 .fillMaxSize()
