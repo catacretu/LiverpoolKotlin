@@ -38,7 +38,7 @@ fun HomeScreen(navController: NavController) {
             )
     ) {
 
-        val (historyButton, lineupButton, uclButton, historyText, lineupText, uclText) = createRefs()
+        val (historyButton, lineupButton, uclButton) = createRefs()
         val typography = initializeFonts()
         val uriHandler = LocalUriHandler.current
 
